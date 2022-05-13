@@ -1,7 +1,6 @@
 #! /usr/bin/env node
 
 import { program } from 'commander';
-
 import fileCommand from './commands/fileCommand.js';
 
 import fileFlag from './flags/fileFlag.js';
@@ -16,7 +15,13 @@ program
     .option('-pd, --price-db <argo>', "Just testing pricedb.")
     .description('Read file as a ledgercito file')
     .action(fileCommand);
-    
+
+program.parse();
+
+// How to use the cli (only print command)
+// ledgercito --file ./files/Income.ledger print ---> Para un ledger
+// ledgercito --file ./files/Index.ledger print ---> Para todos los ledgers
+
 /* program
     .command('print')
     .description('Add a new TODO task')
@@ -26,8 +31,6 @@ program
     .command('balance')
     .description('Add a new TODO task')
     .action(pricedbFlag) */
-
-program.parse();
 
 /*
 program

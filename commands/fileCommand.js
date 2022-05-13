@@ -5,27 +5,30 @@ import registerCommand from './register.js';
 import fileFlag from '../flags/fileFlag.js';
 import sortFlag from '../flags/sortFlag.js';
 import priceDbFlag from '../flags/pricedbFlag.js';
+import readLedgerFile from '../tools/readLedgerFile.js';
+import msgError from '../tools/msgError.js';
 
 function fileCommand(argo) {
   let argumentos = process.argv.slice(2);
   console.log('fileCommand, it works!');
-  console.log(argo);//console.log(comando);
-  console.log(argumentos);
+  //console.log(argo);//console.log(comando);
+  //console.log(argumentos);
 
+  let dataContent = readLedgerFile(argumentos[1]);
+  //console.log(readLedgerFile(argumentos[1]));
   //whichflag
   if(argumentos[0] == '--file' || argumentos[0] == '-f'){
-      //whichCommand
-      let filing = fileFlag(argo.file); 
-      console.log("filing: ", filing); 
       if(argumentos[2] == 'print'){
-        printCommand(filing);
+        printCommand(dataContent);
       } else if(argumentos[2] == 'balance'){
-        printCommand(balanceCommand(filing));
+        printCommand(dataContent);
       } else if(argumentos[2] == 'register'){
-        printCommand(registerCommand(filing));
+        printCommand(Content);
+      } else {
+        msgError();
       }
       //deleteTempFile(filing);
-  } else if(argumentos[0] == '--sort' || argumentos[0] == '-s'){
+  } /* else if(argumentos[0] == '--sort' || argumentos[0] == '-s'){
     let sorting = sortFlag(argo.sort);
       if(argumentos[2] == 'print'){
         printCommand(sorting);
@@ -43,7 +46,7 @@ function fileCommand(argo) {
       chalk.redBright("ERROR: The sintaxis must be either ")+chalk.yellowBright("<--file, --sort, --price-db> <filepath> <command>")
         );
     return;
-  }
+  } */
 }
 
 export default fileCommand;

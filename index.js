@@ -1,7 +1,7 @@
 #! /usr/bin/env node
 
 import { program } from 'commander';
-import fileCommand from './commands/fileCommand.js';
+import whichCommand from './commands/whichCommand.js';
 
 import fileFlag from './flags/fileFlag.js';
 import sortFlag from './flags/sortFlag.js';
@@ -14,7 +14,7 @@ program
     .option('-s, --sort <argo>', "Just testing sort.")
     .option('-pd, --price-db <argo>', "Just testing pricedb.")
     .description('Read file as a ledgercito file')
-    .action(fileCommand);
+    .action(whichCommand);
 
 program.parse();
 

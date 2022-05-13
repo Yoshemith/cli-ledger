@@ -3,7 +3,7 @@ import fs from 'fs';
 
 function whichCommand(type, lineArgo) {
     console.log('--whichFlag! works!');
-    //console.log(process.argv); 
+    //console.log(process.argv); THIS FILE IS UNDER DEVELOPMENT, IT DOESN'T WORK YET
     priceDbFlag();
     if(argumentos[0] == 'print'){
           return 'sort';

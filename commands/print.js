@@ -1,9 +1,6 @@
-import chalk from 'chalk';
-import fs from 'fs';
-
 export default function print(arrayContent) {
-    if(typeof(arrayContent[0])=="object"){
-      //console.log("Trae todos los valores Index");
+    if(Array.isArray(arrayContent[0])){
+      //Trae todos los valores
       arrayContent.map((arrayindex)=>{
         arrayindex.map((arrayContent) => {
           console.log(arrayContent);

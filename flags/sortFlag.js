@@ -10,24 +10,3 @@ function sortFlag(filename) {
 export default sortFlag;
 
 // ledgercito --sort archivo print
-
-// --file -> fileFlag() 
-/* fileFlag() {
-    -print()
-    -balance()
-    -register()
-} */
-
-// --sort -> sortFlag()
-/* sortFlag() {
-    -print()
-    -balance()
-    -register()
-} */
-
-// --price-db -> priceDbFlag()
-/* pricedbFlag() {
-    -print()
-    -balance()
-    -register()
-} */
